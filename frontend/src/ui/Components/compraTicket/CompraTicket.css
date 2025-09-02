@@ -1,0 +1,842 @@
+/* Estilos principales para CompraTicket */
+.compra-ticket {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Indicador de pasos */
+.pasos-indicador {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 40px;
+  padding: 20px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.paso {
+  display: flex;
+  align-items: center;
+  color: rgba(255,255,255,0.6);
+  font-weight: 500;
+  margin: 0 20px;
+  transition: all 0.3s ease;
+}
+
+.paso span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.2);
+  margin-right: 10px;
+  font-weight: bold;
+}
+
+.paso.activo {
+  color: white;
+}
+
+.paso.activo span {
+  background: rgba(255,255,255,0.9);
+  color: #667eea;
+}
+
+/* Contenido de cada paso */
+.contenido-paso {
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+  overflow: hidden;
+}
+
+/* Estilos para BuscadorVuelos */
+.buscador-vuelos {
+  padding: 40px;
+}
+
+.buscador-vuelos h2 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 30px;
+  font-size: 2rem;
+}
+
+.formulario-busqueda {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.campos-principales {
+  display: flex;
+  align-items: end;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.campos-secundarios {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.campo-grupo {
+  flex: 1;
+}
+
+.campo-grupo label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #555;
+}
+
+.campo-grupo input,
+.campo-grupo select {
+  width: 100%;
+  padding: 12px 15px;
+  border: 2px solid #e1e5e9;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: border-color 0.3s ease;
+}
+
+.campo-grupo input:focus,
+.campo-grupo select:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.btn-intercambiar {
+  background: #667eea;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  font-size: 18px;
+  transition: all 0.3s ease;
+  margin-bottom: 5px;
+}
+
+.btn-intercambiar:hover {
+  background: #5a6fd8;
+  transform: rotate(180deg);
+}
+
+.btn-buscar {
+  width: 100%;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  border-radius: 10px;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-buscar:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+}
+
+.consejos-busqueda {
+  margin-top: 40px;
+  padding: 25px;
+  background: #f8f9fa;
+  border-radius: 10px;
+  border-left: 4px solid #667eea;
+}
+
+.consejos-busqueda h3 {
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.consejos-busqueda ul {
+  list-style: none;
+  padding: 0;
+}
+
+.consejos-busqueda li {
+  padding: 8px 0;
+  color: #666;
+}
+
+.consejos-busqueda li:before {
+  content: "💡 ";
+  margin-right: 8px;
+}
+
+/* Estilos para ListaVuelos */
+.lista-vuelos {
+  padding: 30px;
+}
+
+.header-lista {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+  gap: 20px;
+}
+
+.btn-volver {
+  background: #6c757d;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background 0.3s ease;
+}
+
+.btn-volver:hover {
+  background: #5a6268;
+}
+
+.header-lista h2 {
+  color: #333;
+  margin: 0;
+}
+
+.sin-resultados {
+  text-align: center;
+  padding: 60px 20px;
+  color: #666;
+}
+
+.icono-sin-resultados {
+  font-size: 4rem;
+  margin-bottom: 20px;
+}
+
+.vuelos-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.tarjeta-vuelo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px;
+  border: 2px solid #e1e5e9;
+  border-radius: 15px;
+  transition: all 0.3s ease;
+  background: white;
+}
+
+.tarjeta-vuelo:hover {
+  border-color: #667eea;
+  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.1);
+  transform: translateY(-2px);
+}
+
+.info-vuelo {
+  flex: 1;
+}
+
+.ruta {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.ciudad-hora {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 100px;
+}
+
+.ciudad {
+  font-weight: 600;
+  font-size: 18px;
+  color: #333;
+}
+
+.hora {
+  color: #666;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+.conexion {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 30px;
+}
+
+.linea-vuelo {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 5px;
+}
+
+.punto-origen,
+.punto-destino {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #667eea;
+}
+
+.linea {
+  flex: 1;
+  height: 2px;
+  background: #e1e5e9;
+}
+
+.avion {
+  margin: 0 10px;
+  font-size: 16px;
+}
+
+.duracion {
+  font-size: 12px;
+  color: #666;
+}
+
+.detalles-vuelo {
+  display: flex;
+  gap: 30px;
+  font-size: 14px;
+  color: #666;
+}
+
+.precio-seleccion {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.precio {
+  text-align: center;
+}
+
+.desde {
+  display: block;
+  font-size: 12px;
+  color: #666;
+}
+
+.cantidad {
+  display: block;
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+}
+
+.por-persona {
+  display: block;
+  font-size: 12px;
+  color: #666;
+}
+
+.btn-seleccionar {
+  background: #28a745;
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-width: 120px;
+}
+
+.btn-seleccionar:hover:not(:disabled) {
+  background: #218838;
+  transform: translateY(-2px);
+}
+
+.btn-seleccionar:disabled {
+  background: #6c757d;
+  cursor: not-allowed;
+}
+
+.info-adicional {
+  margin-top: 30px;
+  padding: 20px;
+  background: #f8f9fa;
+  border-radius: 10px;
+  text-align: center;
+}
+
+/* Estilos para FormularioReserva */
+.formulario-reserva {
+  padding: 30px;
+}
+
+.header-reserva {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+  gap: 20px;
+}
+
+.resumen-vuelo-seleccionado {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 30px;
+}
+
+.resumen-vuelo-seleccionado h3 {
+  margin-bottom: 15px;
+}
+
+.info-vuelo-compacta {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.precio-base {
+  font-weight: bold;
+  background: rgba(255,255,255,0.2);
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.form-reserva {
+  max-width: 800px;
+}
+
+.seccion-formulario {
+  margin-bottom: 40px;
+  padding: 25px;
+  border: 1px solid #e1e5e9;
+  border-radius: 10px;
+}
+
+.seccion-formulario h3 {
+  margin-bottom: 20px;
+  color: #333;
+  border-bottom: 2px solid #667eea;
+  padding-bottom: 10px;
+}
+
+.campos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.campo {
+  margin-bottom: 20px;
+}
+
+.campo label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #555;
+}
+
+.campo input,
+.campo select {
+  width: 100%;
+  padding: 12px 15px;
+  border: 2px solid #e1e5e9;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: border-color 0.3s ease;
+}
+
+.campo input:focus,
+.campo select:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.opciones-radio {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.opcion-radio {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  border: 2px solid #e1e5e9;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.opcion-radio:hover {
+  border-color: #667eea;
+  background: #f8f9ff;
+}
+
+.opcion-radio input[type="radio"] {
+  margin-right: 10px;
+  width: auto;
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.checkbox-label input[type="checkbox"] {
+  margin-right: 10px;
+  width: auto;
+}
+
+.resumen-precio {
+  background: #f8f9fa;
+  padding: 25px;
+  border-radius: 10px;
+  margin-bottom: 30px;
+}
+
+.resumen-precio h3 {
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.desglose-precio {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.linea-precio {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+}
+
+.linea-precio.total {
+  border-top: 2px solid #667eea;
+  padding-top: 15px;
+  margin-top: 10px;
+  font-size: 18px;
+}
+
+.terminos {
+  margin-bottom: 30px;
+  padding: 20px;
+  background: #fff3cd;
+  border: 1px solid #ffeaa7;
+  border-radius: 8px;
+}
+
+.btn-confirmar-reserva {
+  width: 100%;
+  background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+  color: white;
+  border: none;
+  padding: 18px 30px;
+  border-radius: 10px;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-confirmar-reserva:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(40, 167, 69, 0.3);
+}
+
+/* Estilos para ConfirmacionReserva */
+.confirmacion-reserva {
+  padding: 40px;
+  text-align: center;
+}
+
+.header-confirmacion {
+  margin-bottom: 40px;
+}
+
+.icono-exito {
+  font-size: 4rem;
+  margin-bottom: 20px;
+}
+
+.header-confirmacion h2 {
+  color: #28a745;
+  margin-bottom: 10px;
+}
+
+.tarjeta-confirmacion {
+  background: white;
+  border: 2px solid #28a745;
+  border-radius: 15px;
+  padding: 30px;
+  margin-bottom: 30px;
+  text-align: left;
+}
+
+.numero-reserva {
+  text-align: center;
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #e1e5e9;
+}
+
+.codigo-reserva {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #28a745;
+  margin: 10px 0;
+}
+
+.fecha-reserva {
+  color: #666;
+  font-size: 14px;
+}
+
+.detalles-vuelo-confirmado,
+.detalles-pasajero,
+.resumen-pago {
+  margin-bottom: 30px;
+}
+
+.detalles-vuelo-confirmado h3,
+.detalles-pasajero h3,
+.resumen-pago h3 {
+  color: #333;
+  margin-bottom: 15px;
+  border-bottom: 2px solid #28a745;
+  padding-bottom: 8px;
+}
+
+.info-vuelo-grid,
+.info-pasajero-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+}
+
+.info-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.label {
+  font-weight: 600;
+  color: #666;
+  font-size: 14px;
+}
+
+.valor {
+  color: #333;
+  font-size: 16px;
+  margin-top: 5px;
+}
+
+.total-pagado {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+
+.precio-total {
+  font-weight: bold;
+  color: #28a745;
+  font-size: 24px;
+}
+
+.badge-confirmado {
+  background: #28a745;
+  color: white;
+  padding: 8px 15px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.instrucciones-viaje {
+  background: #f8f9fa;
+  padding: 30px;
+  border-radius: 15px;
+  margin-bottom: 30px;
+  text-align: left;
+}
+
+.instrucciones-viaje h3 {
+  text-align: center;
+  margin-bottom: 25px;
+  color: #333;
+}
+
+.lista-instrucciones {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.instruccion {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  padding: 20px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.instruccion .icono {
+  font-size: 24px;
+  margin-top: 5px;
+}
+
+.instruccion strong {
+  color: #333;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.instruccion p {
+  color: #666;
+  margin: 0;
+  font-size: 14px;
+}
+
+.acciones-confirmacion {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+}
+
+.btn-secundario {
+  background: #6c757d;
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-secundario:hover {
+  background: #5a6268;
+  transform: translateY(-2px);
+}
+
+.btn-principal {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-principal:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+}
+
+.contacto-soporte {
+  background: #e3f2fd;
+  padding: 25px;
+  border-radius: 10px;
+  border-left: 4px solid #2196f3;
+}
+
+.contacto-soporte h4 {
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.contacto-soporte p {
+  color: #666;
+  margin-bottom: 15px;
+}
+
+.info-contacto {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.info-contacto span {
+  color: #2196f3;
+  font-weight: 600;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .compra-ticket {
+    padding: 10px;
+  }
+  
+  .pasos-indicador {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .paso {
+    margin: 0;
+  }
+  
+  .campos-principales {
+    flex-direction: column;
+  }
+  
+  .campos-secundarios {
+    flex-direction: column;
+  }
+  
+  .tarjeta-vuelo {
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .ruta {
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .conexion {
+    margin: 0;
+  }
+  
+  .detalles-vuelo {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .acciones-confirmacion {
+    flex-direction: column;
+  }
+  
+  .info-contacto {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
